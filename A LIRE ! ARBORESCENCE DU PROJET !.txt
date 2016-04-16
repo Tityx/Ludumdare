@@ -1,0 +1,19 @@
+- Les modéles en cours de construction dont le format final est 
+autre chose que le .Blend doivent être sauvegardés dans le dossier <external Resources>>.
+Sinon, ils peuvent etre exportés directement dans Unity
+
+-Les versions finales des modéles ( ou les .Blend en construction pour certains ) doivent
+être enregistrés dans Projet Banane/Assets/models.
+
+-Les textures sont rangées dans le dossier Projet Banane/Assets/Textures
+
+-Les Scripts sont rangés dans le dossier Projet Banane/Assets/Scripts
+
+-Les Prefabs qui ne sont pas appelés en cours de jeu sont rangés dans le dossier 
+Projet Banane/Assets/Prefabs. Sinon ils doivent etre dans Projet Banane/Assets/Resources/Prefabs
+
+-Les sons sont rangés dans Projet Banane/Assets/Sons
+
+-Les scenes sont rangées dans Projet Banane/Assets/Scene. Une seule personne doit modifier
+la scéne principale, et ce lorsque les tests necessaires sont concluants. 
+Pour les tests, utiliser la scéne test_[prenom du testeur].
