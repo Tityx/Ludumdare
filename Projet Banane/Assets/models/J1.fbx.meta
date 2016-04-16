@@ -1,0 +1,395 @@
+fileFormatVersion: 2
+guid: 56f9207b9a94ee440841bc502f98f29e
+timeCreated: 1460805047
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Armature
+    100002: Basemesh_FullbodyMale
+    100004: Cube
+    100006: Cylinder
+    100008: Head
+    100010: Head 1
+    100012: Head_end
+    100014: Head_end 1
+    100016: Hips
+    100018: Hips 1
+    100020: Iddle
+    100022: //RootNode
+    100024: LeftArm
+    100026: LeftArm 1
+    100028: LeftFoot
+    100030: LeftFoot 1
+    100032: LeftForeArm
+    100034: LeftForeArm 1
+    100036: LeftHand
+    100038: LeftHand 1
+    100040: LeftHandIndex1
+    100042: LeftHandIndex1 1
+    100044: LeftHandIndex2
+    100046: LeftHandIndex2 1
+    100048: LeftHandIndex3
+    100050: LeftHandIndex3 1
+    100052: LeftHandIndex3_end
+    100054: LeftHandIndex3_end 1
+    100056: LeftHandMiddle1
+    100058: LeftHandMiddle1 1
+    100060: LeftHandMiddle2
+    100062: LeftHandMiddle2 1
+    100064: LeftHandMiddle3
+    100066: LeftHandMiddle3 1
+    100068: LeftHandMiddle3_end
+    100070: LeftHandMiddle3_end 1
+    100072: LeftHandPinky1
+    100074: LeftHandPinky1 1
+    100076: LeftHandPinky2
+    100078: LeftHandPinky2 1
+    100080: LeftHandPinky3
+    100082: LeftHandPinky3 1
+    100084: LeftHandPinky3_end
+    100086: LeftHandPinky3_end 1
+    100088: LeftHandRing1
+    100090: LeftHandRing1 1
+    100092: LeftHandRing2
+    100094: LeftHandRing2 1
+    100096: LeftHandRing3
+    100098: LeftHandRing3 1
+    100100: LeftHandRing3_end
+    100102: LeftHandRing3_end 1
+    100104: LeftHandThumb1
+    100106: LeftHandThumb1 1
+    100108: LeftHandThumb2
+    100110: LeftHandThumb2 1
+    100112: LeftHandThumb3
+    100114: LeftHandThumb3 1
+    100116: LeftHandThumb3_end
+    100118: LeftHandThumb3_end 1
+    100120: LeftLeg
+    100122: LeftLeg 1
+    100124: LeftShoulder
+    100126: LeftShoulder 1
+    100128: LeftToeBase
+    100130: LeftToeBase 1
+    100132: LeftToeBase_end
+    100134: LeftToeBase_end 1
+    100136: LeftUpLeg
+    100138: LeftUpLeg 1
+    100140: Neck
+    100142: Neck 1
+    100144: RightArm
+    100146: RightArm 1
+    100148: RightFoot
+    100150: RightFoot 1
+    100152: RightForeArm
+    100154: RightForeArm 1
+    100156: RightHand
+    100158: RightHand 1
+    100160: RightHandIndex1
+    100162: RightHandIndex1 1
+    100164: RightHandIndex2
+    100166: RightHandIndex2 1
+    100168: RightHandIndex3
+    100170: RightHandIndex3 1
+    100172: RightHandIndex3_end
+    100174: RightHandIndex3_end 1
+    100176: RightHandMiddle1
+    100178: RightHandMiddle1 1
+    100180: RightHandMiddle2
+    100182: RightHandMiddle2 1
+    100184: RightHandMiddle3
+    100186: RightHandMiddle3 1
+    100188: RightHandMiddle3_end
+    100190: RightHandMiddle3_end 1
+    100192: RightHandPinky1
+    100194: RightHandPinky1 1
+    100196: RightHandPinky2
+    100198: RightHandPinky2 1
+    100200: RightHandPinky3
+    100202: RightHandPinky3 1
+    100204: RightHandPinky3_end
+    100206: RightHandPinky3_end 1
+    100208: RightHandRing1
+    100210: RightHandRing1 1
+    100212: RightHandRing2
+    100214: RightHandRing2 1
+    100216: RightHandRing3
+    100218: RightHandRing3 1
+    100220: RightHandRing3_end
+    100222: RightHandRing3_end 1
+    100224: RightHandThumb1
+    100226: RightHandThumb1 1
+    100228: RightHandThumb2
+    100230: RightHandThumb2 1
+    100232: RightHandThumb3
+    100234: RightHandThumb3 1
+    100236: RightHandThumb3_end
+    100238: RightHandThumb3_end 1
+    100240: RightLeg
+    100242: RightLeg 1
+    100244: RightShoulder
+    100246: RightShoulder 1
+    100248: RightToeBase
+    100250: RightToeBase 1
+    100252: RightToeBase_end
+    100254: RightToeBase_end 1
+    100256: RightUpLeg
+    100258: RightUpLeg 1
+    100260: Spine
+    100262: Spine 1
+    100264: Spine1
+    100266: Spine1 1
+    100268: Spine2
+    100270: Spine2 1
+    400000: Armature
+    400002: Basemesh_FullbodyMale
+    400004: Cube
+    400006: Cylinder
+    400008: Head
+    400010: Head 1
+    400012: Head_end
+    400014: Head_end 1
+    400016: Hips
+    400018: Hips 1
+    400020: Iddle
+    400022: //RootNode
+    400024: LeftArm
+    400026: LeftArm 1
+    400028: LeftFoot
+    400030: LeftFoot 1
+    400032: LeftForeArm
+    400034: LeftForeArm 1
+    400036: LeftHand
+    400038: LeftHand 1
+    400040: LeftHandIndex1
+    400042: LeftHandIndex1 1
+    400044: LeftHandIndex2
+    400046: LeftHandIndex2 1
+    400048: LeftHandIndex3
+    400050: LeftHandIndex3 1
+    400052: LeftHandIndex3_end
+    400054: LeftHandIndex3_end 1
+    400056: LeftHandMiddle1
+    400058: LeftHandMiddle1 1
+    400060: LeftHandMiddle2
+    400062: LeftHandMiddle2 1
+    400064: LeftHandMiddle3
+    400066: LeftHandMiddle3 1
+    400068: LeftHandMiddle3_end
+    400070: LeftHandMiddle3_end 1
+    400072: LeftHandPinky1
+    400074: LeftHandPinky1 1
+    400076: LeftHandPinky2
+    400078: LeftHandPinky2 1
+    400080: LeftHandPinky3
+    400082: LeftHandPinky3 1
+    400084: LeftHandPinky3_end
+    400086: LeftHandPinky3_end 1
+    400088: LeftHandRing1
+    400090: LeftHandRing1 1
+    400092: LeftHandRing2
+    400094: LeftHandRing2 1
+    400096: LeftHandRing3
+    400098: LeftHandRing3 1
+    400100: LeftHandRing3_end
+    400102: LeftHandRing3_end 1
+    400104: LeftHandThumb1
+    400106: LeftHandThumb1 1
+    400108: LeftHandThumb2
+    400110: LeftHandThumb2 1
+    400112: LeftHandThumb3
+    400114: LeftHandThumb3 1
+    400116: LeftHandThumb3_end
+    400118: LeftHandThumb3_end 1
+    400120: LeftLeg
+    400122: LeftLeg 1
+    400124: LeftShoulder
+    400126: LeftShoulder 1
+    400128: LeftToeBase
+    400130: LeftToeBase 1
+    400132: LeftToeBase_end
+    400134: LeftToeBase_end 1
+    400136: LeftUpLeg
+    400138: LeftUpLeg 1
+    400140: Neck
+    400142: Neck 1
+    400144: RightArm
+    400146: RightArm 1
+    400148: RightFoot
+    400150: RightFoot 1
+    400152: RightForeArm
+    400154: RightForeArm 1
+    400156: RightHand
+    400158: RightHand 1
+    400160: RightHandIndex1
+    400162: RightHandIndex1 1
+    400164: RightHandIndex2
+    400166: RightHandIndex2 1
+    400168: RightHandIndex3
+    400170: RightHandIndex3 1
+    400172: RightHandIndex3_end
+    400174: RightHandIndex3_end 1
+    400176: RightHandMiddle1
+    400178: RightHandMiddle1 1
+    400180: RightHandMiddle2
+    400182: RightHandMiddle2 1
+    400184: RightHandMiddle3
+    400186: RightHandMiddle3 1
+    400188: RightHandMiddle3_end
+    400190: RightHandMiddle3_end 1
+    400192: RightHandPinky1
+    400194: RightHandPinky1 1
+    400196: RightHandPinky2
+    400198: RightHandPinky2 1
+    400200: RightHandPinky3
+    400202: RightHandPinky3 1
+    400204: RightHandPinky3_end
+    400206: RightHandPinky3_end 1
+    400208: RightHandRing1
+    400210: RightHandRing1 1
+    400212: RightHandRing2
+    400214: RightHandRing2 1
+    400216: RightHandRing3
+    400218: RightHandRing3 1
+    400220: RightHandRing3_end
+    400222: RightHandRing3_end 1
+    400224: RightHandThumb1
+    400226: RightHandThumb1 1
+    400228: RightHandThumb2
+    400230: RightHandThumb2 1
+    400232: RightHandThumb3
+    400234: RightHandThumb3 1
+    400236: RightHandThumb3_end
+    400238: RightHandThumb3_end 1
+    400240: RightLeg
+    400242: RightLeg 1
+    400244: RightShoulder
+    400246: RightShoulder 1
+    400248: RightToeBase
+    400250: RightToeBase 1
+    400252: RightToeBase_end
+    400254: RightToeBase_end 1
+    400256: RightUpLeg
+    400258: RightUpLeg 1
+    400260: Spine
+    400262: Spine 1
+    400264: Spine1
+    400266: Spine1 1
+    400268: Spine2
+    400270: Spine2 1
+    4300000: Cylinder
+    4300002: Basemesh_FullbodyMale
+    4300004: Cube
+    7400000: Iddle.001
+    7400002: Front
+    7400004: ActiveBlock
+    7400006: Back
+    7400008: BackHit
+    7400010: Block
+    7400012: Hit1
+    7400014: Hit2
+    7400016: Hit3
+    7400018: Hit4
+    7400020: LoadSuperHit
+    7400022: SuperHit
+    7400024: RunHit
+    7400026: Stunned
+    7400028: Touched
+    7400030: Iddle|ActiveBlock
+    7400032: Iddle|Back
+    7400034: Iddle|BackHit
+    7400036: Iddle|Block
+    7400038: Iddle|Front
+    7400040: Iddle|Hit1
+    7400042: Iddle|Hit2
+    7400044: Iddle|Hit3
+    7400046: Iddle|Hit4
+    7400048: Iddle|Iddle.001
+    7400050: Iddle|LoadSuperHit
+    7400052: Iddle|RunHit
+    7400054: Iddle|Stunned
+    7400056: Iddle|SuperHit
+    7400058: Iddle|Touched
+    7400060: Armature|ActiveBlock
+    7400062: Armature|Back
+    7400064: Armature|BackHit
+    7400066: Armature|Block
+    7400068: Armature|Front
+    7400070: Armature|Hit1
+    7400072: Armature|Hit2
+    7400074: Armature|Hit3
+    7400076: Armature|Hit4
+    7400078: Armature|Iddle.001
+    7400080: Armature|LoadSuperHit
+    7400082: Armature|RunHit
+    7400084: Armature|Stunned
+    7400086: Armature|SuperHit
+    7400088: Armature|Touched
+    9500000: //RootNode
+    13700000: Basemesh_FullbodyMale
+    13700002: Cube
+    13700004: Cylinder
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
