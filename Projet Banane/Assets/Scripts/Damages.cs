@@ -29,13 +29,14 @@ public class Damages : MonoBehaviour {
         timer++;
         if(timer == 10)
         {
-            Destroy(this.gameObject);
+           Destroy(this.gameObject);
         }
 	}
 
+
     void OnCollisionEnter(Collision collision)
     {
-        
+        Debug.Log("touche");
         if (collision.gameObject.tag == "Fighter" && collision.gameObject.name != owner)
         {
             collision.gameObject.GetComponent<Character>().takeDamages(this.damages);

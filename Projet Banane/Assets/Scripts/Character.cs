@@ -76,7 +76,7 @@ public class Character : MonoBehaviour {
         body[3] = rightUpLeg;
         rightLeg = rightUpLeg.Find("RightLeg");
         body[4] = rightLeg;
-        body[5] = spine;
+        body[5] = spine.Find("Spine1");
         head = spine.Find("Spine1").Find("Spine2").Find("Neck").Find("Head");
         body[6] = head;
         rightArm = spine.Find("Spine1").Find("Spine2").Find("RightShoulder").Find("RightArm");
@@ -92,8 +92,12 @@ public class Character : MonoBehaviour {
 
         for (int i = 0; i < body.Length; i++)
         {
-            body[i].GetComponent<Rigidbody>().mass = 400.0f;
+           // body[i].GetComponent<Rigidbody>().mass = 400.0f;
             body[i].GetComponent<Rigidbody>().isKinematic = true;
+            if (body[i].GetComponent<CharacterJoint>() != null)
+            {
+                body[i].GetComponent<CharacterJoint>().gameObject.SetActive(false);
+            }
 
         }
 
@@ -144,8 +148,8 @@ public class Character : MonoBehaviour {
                 }
                 if (stunned)
                 {
+                   // this.transform.GetComponent<Animation>().CrossFade("Stunned");
                     goBack();
-                    this.transform.GetComponent<Animation>().CrossFade("Stunned");
                 }
                 if (hit)
                 {
@@ -446,22 +450,28 @@ public class Character : MonoBehaviour {
         allFalse();
         if(!isBlocking)
         {
-            if (damages >= 15)
-            {
-                hardStun();
-            }
-            else
-            {
-                touched = true;
-            }
-            
             this.lives = lives - damages;
-
-            if(this.lives <= 0)
+            if (this.lives <= 0)
             {
                 this.lives = 0;
                 die();
             }
+            else
+            {
+                if (damages >= 15)
+                {
+                    hardStun();
+                }
+                else
+                {
+                    touched = true;
+                }
+
+                
+            }
+           
+
+           
         }
         else
         {
@@ -481,21 +491,19 @@ public class Character : MonoBehaviour {
 
     public void die()
     {
-        
+        this.transform.GetComponent<CharacterController>().enabled = false;
         this.transform.GetComponent<Animation>().enabled = false;
-        //   this.GetComponent<CharacterController>().enabled = false;
+        this.GetComponent<Character>().enabled = false;
         dead = true;
 
-        for (int i = 0; i < body.Length - 1; i++)
+        for (int i = 0; i < body.Length; i++)
         {
-
             body[i].GetComponent<Rigidbody>().isKinematic = false;
             body[i].GetComponent<Rigidbody>().useGravity = true;
-          /*  if (body[i].GetComponent<CharacterJoint>() != null)
+            if (body[i].GetComponent<CharacterJoint>() != null)
             {
-
                 body[i].GetComponent<CharacterJoint>().gameObject.SetActive(true);
-            }*/
+            }
         }
     }
 }
