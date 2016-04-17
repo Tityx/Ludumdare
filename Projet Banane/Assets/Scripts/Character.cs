@@ -42,6 +42,10 @@ public class Character : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
+
+
+        this.transform.GetComponent<ParticleSystem>().enableEmission = false;
+
         lives = 100;
         block = 1000;
         isBlocking = false;
@@ -107,11 +111,30 @@ public class Character : MonoBehaviour {
 	void Update ()
     {
 
-        moveDirection = new Vector3(0, 0, 0);
+        Debug.Log(this.gameObject.name + " lives = " + this.lives);
       
 
         if(!dead)
         {
+
+            moveDirection = new Vector3(0, 0, 0);
+
+            if(this.lives < 80 && this.lives> 60)
+            {
+                this.level = 2;
+            }
+            else if(this.lives < 60 && this.lives > 40)
+            {
+                this.transform.GetComponent<ParticleSystem>().enableEmission = true;
+                this.level = 3;
+            }
+            else if (this.lives < 20)
+            {
+                this.transform.GetComponent<ParticleSystem>().startSize = 5;
+                this.level = 4;
+            }
+
+
 
             if (block < 100 && !isBlocking)
             {
@@ -219,6 +242,19 @@ public class Character : MonoBehaviour {
 
     public void impact(int damages)
     {
+        switch(level)
+        {
+            case 2: damages = damages + 2;
+                break;
+            case 3: damages = damages + 6;
+                break;
+            case 4: damages = damages * 2;
+                break;
+            default:
+                break;
+        }
+
+
 
         Transform spawnImpact;
         spawnImpact = transform.Find("ImpactZone");
@@ -364,8 +400,12 @@ public class Character : MonoBehaviour {
         {
             isBlocking = false;
         }
-        if (Input.GetKeyDown(KeyCode.T) && combo <=4 && canHit)
+        if (Input.GetKeyDown(KeyCode.T) &&  canHit)
         {
+            if(combo > 4 )
+            {
+                combo = 1;
+            }
             strike();
         }
 
@@ -420,6 +460,10 @@ public class Character : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.U))
         {
+            if (combo > 4)
+            {
+                combo = 1;
+            }
             strike();
         }
 
@@ -447,6 +491,25 @@ public class Character : MonoBehaviour {
 
     public void takeDamages(int damages)
     {
+
+        switch(level)
+        {
+            case 2: damages = damages - 3;
+                break;
+            case 3: damages = damages - 8;
+                break;
+            case 4: damages = damages - 15;
+                break;
+            default:
+                break;
+        }
+
+        if(damages < 0)
+        {
+            damages = 0;
+        }
+
+
         allFalse();
         if(!isBlocking)
         {
@@ -461,17 +524,18 @@ public class Character : MonoBehaviour {
                 if (damages >= 15)
                 {
                     hardStun();
+                    StartCoroutine(waitAndFight(3));
+                    
                 }
                 else
                 {
+                   
+                    StartCoroutine(waitAndFight(1));
                     touched = true;
                 }
 
                 
             }
-           
-
-           
         }
         else
         {
@@ -489,8 +553,15 @@ public class Character : MonoBehaviour {
         }
     }
 
+    IEnumerator waitAndFight(float waiting)
+    {
+        yield return new WaitForSeconds(waiting);
+        this.canHit = true;
+    }
+
     public void die()
     {
+        this.transform.GetComponent<ParticleSystem>().enableEmission = false;
         this.transform.GetComponent<CharacterController>().enabled = false;
         this.transform.GetComponent<Animation>().enabled = false;
         this.GetComponent<Character>().enabled = false;

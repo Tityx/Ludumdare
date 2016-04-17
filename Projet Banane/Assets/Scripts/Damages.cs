@@ -7,11 +7,7 @@ public class Damages : MonoBehaviour {
     int damages;
     int timer;
 
-	// Use this for initialization
-	void Start ()
-    {
-	    
-	}
+    
 
     public void setDamages(int _damages)
     {
@@ -26,6 +22,20 @@ public class Damages : MonoBehaviour {
     // Update is called once per frame
     void Update ()
     {
+        if(this.damages <= 10)
+        {
+            this.GetComponent<ParticleSystem>().startColor = Color.cyan;
+        }
+        else if(this.damages > 10 && this.damages <=15)
+        {
+            this.GetComponent<ParticleSystem>().startColor = Color.yellow;
+        }
+        else
+        {
+            this.GetComponent<ParticleSystem>().startColor = Color.red;
+        }
+
+
         timer++;
         if(timer == 10)
         {
