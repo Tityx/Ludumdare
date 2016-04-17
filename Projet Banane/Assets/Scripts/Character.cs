@@ -22,6 +22,7 @@ public class Character : MonoBehaviour {
     protected bool activeBlock;
     protected bool dead;
     private Vector3 moveDirection;
+    private AudioSource mySound;
 
 
     //Variables pour le squelette
@@ -64,6 +65,8 @@ public class Character : MonoBehaviour {
         touched = false;
         activeBlock = false;
         dead = false;
+        mySound = this.GetComponent<AudioSource>();
+        mySound.enabled = false;
 
 
         //Assignation du Ragdoll
@@ -125,6 +128,11 @@ public class Character : MonoBehaviour {
             }
             else if(this.lives < 60 && this.lives > 40)
             {
+                if(this.gameObject.name =="J1" && transform.Find("Toge") !=null)
+                {
+                    Destroy(transform.Find("Toge").gameObject);
+                }
+                mySound.enabled = true;
                 this.transform.GetComponent<ParticleSystem>().enableEmission = true;
                 this.level = 3;
             }
@@ -232,7 +240,8 @@ public class Character : MonoBehaviour {
         }
         else
         {
-           // this.transform.GetComponent<Character>().enabled = false;
+            // this.transform.GetComponent<Character>().enabled = false;
+            mySound.enabled = false;
             this.transform.GetComponent<CharacterController>().enabled = false;
         }
 
@@ -458,13 +467,15 @@ public class Character : MonoBehaviour {
             isBlocking = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.U))
+        if (Input.GetKeyDown(KeyCode.U) && canHit)
         {
             if (combo > 4)
             {
                 combo = 1;
             }
             strike();
+
+
         }
 
         if (Input.GetKey(KeyCode.I))
@@ -577,4 +588,11 @@ public class Character : MonoBehaviour {
             }
         }
     }
+
+
+    public int getLives()
+    {
+        return this.lives;
+    }
+
 }

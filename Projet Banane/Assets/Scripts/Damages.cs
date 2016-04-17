@@ -6,8 +6,12 @@ public class Damages : MonoBehaviour {
     string owner;
     int damages;
     int timer;
+    bool damageTaken;
 
-    
+    void Start()
+    {
+        damageTaken = false;
+    }
 
     public void setDamages(int _damages)
     {
@@ -37,7 +41,7 @@ public class Damages : MonoBehaviour {
 
 
         timer++;
-        if(timer == 10)
+        if(timer == 20)
         {
            Destroy(this.gameObject);
         }
@@ -46,9 +50,21 @@ public class Damages : MonoBehaviour {
 
     void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("touche");
-        if (collision.gameObject.tag == "Fighter" && collision.gameObject.name != owner)
+       
+        
+        Debug.Log("TOUCHE !");
+        if (collision.gameObject.tag == "Fighter" && collision.gameObject.name != owner && !damageTaken)
         {
+            if (this.damages < 15)
+            {
+                this.transform.Find("hit").GetComponent<AudioSource>().enabled = true;
+            }
+            else
+            {
+                this.transform.Find("superHit").GetComponent<AudioSource>().enabled = true;
+            }
+            this.transform.GetComponent<BoxCollider>().enabled = false;
+            damageTaken = true;
             collision.gameObject.GetComponent<Character>().takeDamages(this.damages);
         }
     }
