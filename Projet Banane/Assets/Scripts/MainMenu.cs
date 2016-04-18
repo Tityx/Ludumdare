@@ -16,6 +16,7 @@ public class MainMenu : MonoBehaviour {
         transform.Find("Logo").gameObject.SetActive(true);
         transform.Find("Instructions").gameObject.SetActive(true);
 		transform.Find("Jouer").gameObject.SetActive(true);
+        transform.Find("Quitter").gameObject.SetActive(true);
     }
 
     public void showInstructions()
@@ -24,11 +25,17 @@ public class MainMenu : MonoBehaviour {
         transform.Find("infos").gameObject.SetActive(true);
         transform.Find("Instructions").gameObject.SetActive(false);
 		transform.Find("Jouer").gameObject.SetActive(false);
+        transform.Find("Quitter").gameObject.SetActive(false);
     }
 
     public void launchGame()
     {
         Application.LoadLevel("tests Titix");
+    }
+
+    public void quit()
+    {
+        Application.Quit();
     }
 
 
