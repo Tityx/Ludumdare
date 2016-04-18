@@ -13,11 +13,15 @@ public class MainMenu : MonoBehaviour {
     public void hideInstructions()
     {
         transform.Find("infos").gameObject.SetActive(false);
+        transform.Find("Logo").gameObject.SetActive(true);
+        transform.Find("Instructions").gameObject.SetActive(true);
     }
 
     public void showInstructions()
     {
+        transform.Find("Logo").gameObject.SetActive(false);
         transform.Find("infos").gameObject.SetActive(true);
+        transform.Find("Instructions").gameObject.SetActive(false);
     }
 
     public void launchGame()

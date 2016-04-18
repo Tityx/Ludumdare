@@ -443,7 +443,7 @@ public class Character : MonoBehaviour {
         {
             isBlocking = false;
         }
-        if (Input.GetKeyDown(KeyCode.T) &&  canHit)
+        if (Input.GetKeyDown(KeyCode.T) /*&&  canHit*/)
         {
             if(combo > 4 )
             {
@@ -501,7 +501,7 @@ public class Character : MonoBehaviour {
             isBlocking = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.U) && canHit)
+        if (Input.GetKeyDown(KeyCode.U) /*&& canHit*/)
         {
             if (combo > 4)
             {
@@ -555,9 +555,10 @@ public class Character : MonoBehaviour {
         }
 
 
-        allFalse();
+        
         if(!isBlocking)
         {
+            allFalse();
             this.lives = lives - damages;
             if (this.lives <= 0)
             {
@@ -584,6 +585,7 @@ public class Character : MonoBehaviour {
         }
         else
         {
+            Debug.Log("BLOCKING");
             this.block = block - damages;
             if (damages >= 15)
             {
@@ -591,7 +593,6 @@ public class Character : MonoBehaviour {
             }
             else
             {
-                isBlocking = false;
                 activeBlock = true;
             }
             
