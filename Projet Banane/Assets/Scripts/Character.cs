@@ -131,7 +131,7 @@ public class Character : MonoBehaviour
 
                     foreach (Material matt in transform.Find("Tete").GetComponent<Renderer>().materials)
                     {
-                        Debug.Log(matt.name);
+                        //Debug.Log(matt.name);
                         if (matt.name == "Face (Instance)")
                         {
                             matt.mainTexture = Resources.Load("Textures/FaceBlessure1-2") as Texture;
@@ -162,7 +162,7 @@ public class Character : MonoBehaviour
 
                     foreach (Material matt in transform.Find("Tete").GetComponent<Renderer>().materials)
                     {
-                        Debug.Log(matt.name);
+                        //Debug.Log(matt.name);
                         if (matt.name == "Face (Instance)")
                         {
                             matt.mainTexture = Resources.Load("Textures/FaceBlessure3") as Texture;
@@ -592,7 +592,7 @@ public class Character : MonoBehaviour
         }
         else
         {
-            Debug.Log("BLOCKING");
+            //Debug.Log("BLOCKING");
             this.block = block - damages;
             if (damages >= 15)
             {

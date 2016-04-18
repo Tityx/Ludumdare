@@ -1,0 +1,48 @@
+Initialize engine version: 5.3.4f1 (fdbb5133b820)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 10.1]
+    Renderer: Intel(R) HD Graphics (ID=0x106)
+    Vendor:   Intel
+    VRAM:     848 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\ly\Desktop\ShaolinVsNinja\ShaolinVsNinja_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\ly\Desktop\ShaolinVsNinja\ShaolinVsNinja_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\ly\Desktop\ShaolinVsNinja\ShaolinVsNinja_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\ly\Desktop\ShaolinVsNinja\ShaolinVsNinja_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\ly\Desktop\ShaolinVsNinja\ShaolinVsNinja_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\ly\Desktop\ShaolinVsNinja\ShaolinVsNinja_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\ly\Desktop\ShaolinVsNinja\ShaolinVsNinja_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\ly\Desktop\ShaolinVsNinja\ShaolinVsNinja_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\ly\Desktop\ShaolinVsNinja\ShaolinVsNinja_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\ly\Desktop\ShaolinVsNinja\ShaolinVsNinja_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\ly\Desktop\ShaolinVsNinja\ShaolinVsNinja_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\ly\Desktop\ShaolinVsNinja\ShaolinVsNinja_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+- Completed reload, in  0.577 seconds
+Platform assembly: C:\Users\ly\Desktop\ShaolinVsNinja\ShaolinVsNinja_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\ly\Desktop\ShaolinVsNinja\ShaolinVsNinja_Data\Managed\System.dll (this message is harmless)
+desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 1.297277 ms
+Setting up 1 worker threads for Enlighten.
+  Thread -> id: 2eb8 -> priority: 1 
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 11.927292 ms
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 955.
+Total: 0.693113 ms (FindLiveObjects: 0.085527 ms CreateObjectMapping: 0.065000 ms MarkObjects: 0.500163 ms  DeleteObjects: 0.041053 ms)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.205919 ms
+
+Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 955.
+Total: 0.874430 ms (FindLiveObjects: 0.108106 ms CreateObjectMapping: 0.046526 ms MarkObjects: 0.667112 ms  DeleteObjects: 0.050632 ms)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.937706 ms
+
+Unloading 65 unused Assets to reduce memory usage. Loaded Objects now: 281.
+Total: 0.868272 ms (FindLiveObjects: 0.049263 ms CreateObjectMapping: 0.039000 ms MarkObjects: 0.582953 ms  DeleteObjects: 0.194317 ms)
+

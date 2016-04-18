@@ -52,7 +52,7 @@ public class Damages : MonoBehaviour {
     {
        
         
-        Debug.Log("TOUCHE !");
+        //Debug.Log("TOUCHE !");
         if (collision.gameObject.tag == "Fighter" && collision.gameObject.name != owner && !damageTaken)
         {
             if (this.damages < 15)
