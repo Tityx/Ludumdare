@@ -113,38 +113,72 @@ public class Character : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-
-        Debug.Log(this.gameObject.name + " lives = " + this.lives);
-      
-
         if(!dead)
         {
 
+            //Shader tete = transform.Find("Tete").GetComponent<Renderer>().material.shader;
+            Material tete = new Material(Shader.Find("Transparent/Diffuse"));
+
             moveDirection = new Vector3(0, 0, 0);
 
-            if(this.lives < 80 && this.lives> 60)
+            if(this.lives <= 80 && this.lives >60)
             {
                 this.level = 2;
+                if (this.gameObject.name == "J1")
+                {
+                    transform.Find("Tete").GetComponent<Renderer>().material.mainTexture = Resources.Load("Textures/CorpsBlessure1") as Texture;
+
+                    foreach (Material matt in  transform.Find("Tete").GetComponent<Renderer>().materials)
+                         {
+                             Debug.Log(matt.name);
+                            if (matt.name == "Face (Instance)")
+                                {
+                                  matt.mainTexture = Resources.Load("Textures/FaceBlessure1-2") as Texture;
+                                }
+                                 
+                         }
+
+
+
+                }
             }
-            else if(this.lives < 60 && this.lives > 40)
+            else if(this.lives <= 60 && this.lives > 30)
             {
                 if(this.gameObject.name =="J1" && transform.Find("Toge") !=null)
                 {
+                    transform.Find("Tete").GetComponent<Renderer>().material.mainTexture = Resources.Load("Textures/CorpsBlessure2") as Texture;
                     Destroy(transform.Find("Toge").gameObject);
                 }
                 mySound.enabled = true;
                 this.transform.GetComponent<ParticleSystem>().enableEmission = true;
                 this.level = 3;
             }
-            else if (this.lives < 20)
+            else if (this.lives <= 30)
             {
-                this.transform.GetComponent<ParticleSystem>().startSize = 5;
+                if (this.gameObject.name == "J1")
+                {
+                    transform.Find("Tete").GetComponent<Renderer>().material.mainTexture = Resources.Load("Textures/CorpsBlessure3") as Texture;
+
+                    foreach (Material matt in transform.Find("Tete").GetComponent<Renderer>().materials)
+                    {
+                        Debug.Log(matt.name);
+                        if (matt.name == "Face (Instance)")
+                        {
+                            matt.mainTexture = Resources.Load("Textures/FaceBlessure3") as Texture;
+
+                        }
+
+                    }
+
+
+                }
+                    this.transform.GetComponent<ParticleSystem>().startSize = 5;
                 this.level = 4;
             }
 
 
 
-            if (block < 100 && !isBlocking)
+            if (block < 1000 && !isBlocking)
             {
                 block = block + 1;
             }
