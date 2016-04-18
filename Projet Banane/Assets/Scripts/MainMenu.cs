@@ -15,6 +15,7 @@ public class MainMenu : MonoBehaviour {
         transform.Find("infos").gameObject.SetActive(false);
         transform.Find("Logo").gameObject.SetActive(true);
         transform.Find("Instructions").gameObject.SetActive(true);
+		transform.Find("Jouer").gameObject.SetActive(true);
     }
 
     public void showInstructions()
@@ -22,6 +23,7 @@ public class MainMenu : MonoBehaviour {
         transform.Find("Logo").gameObject.SetActive(false);
         transform.Find("infos").gameObject.SetActive(true);
         transform.Find("Instructions").gameObject.SetActive(false);
+		transform.Find("Jouer").gameObject.SetActive(false);
     }
 
     public void launchGame()
