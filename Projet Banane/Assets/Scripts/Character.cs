@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Character : MonoBehaviour {
+public class Character : MonoBehaviour
+{
 
     private int lives;
     private int block;
@@ -41,7 +42,7 @@ public class Character : MonoBehaviour {
 
 
     // Use this for initialization
-    void Start ()
+    void Start()
     {
 
 
@@ -71,7 +72,7 @@ public class Character : MonoBehaviour {
 
         //Assignation du Ragdoll
 
-       body = new Transform[11];
+        body = new Transform[11];
         hips = transform.Find("Armature").Find("Hips").transform;
         spine = transform.Find("Armature").Find("Hips").Find("Spine");
         body[0] = hips;
@@ -99,7 +100,7 @@ public class Character : MonoBehaviour {
 
         for (int i = 0; i < body.Length; i++)
         {
-           // body[i].GetComponent<Rigidbody>().mass = 400.0f;
+            // body[i].GetComponent<Rigidbody>().mass = 400.0f;
             body[i].GetComponent<Rigidbody>().isKinematic = true;
             if (body[i].GetComponent<CharacterJoint>() != null)
             {
@@ -108,43 +109,43 @@ public class Character : MonoBehaviour {
 
         }
 
-    }
-	
-	// Update is called once per frame
-	void Update ()
-    {
-        if(!dead)
-        {
+        allFalse();
 
-            //Shader tete = transform.Find("Tete").GetComponent<Renderer>().material.shader;
-            Material tete = new Material(Shader.Find("Transparent/Diffuse"));
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (!dead)
+        {
+            
 
             moveDirection = new Vector3(0, 0, 0);
 
-            if(this.lives <= 80 && this.lives >60)
+            if (this.lives <= 80 && this.lives > 60)
             {
                 this.level = 2;
                 if (this.gameObject.name == "J1")
                 {
                     transform.Find("Tete").GetComponent<Renderer>().material.mainTexture = Resources.Load("Textures/CorpsBlessure1") as Texture;
 
-                    foreach (Material matt in  transform.Find("Tete").GetComponent<Renderer>().materials)
-                         {
-                             Debug.Log(matt.name);
-                            if (matt.name == "Face (Instance)")
-                                {
-                                  matt.mainTexture = Resources.Load("Textures/FaceBlessure1-2") as Texture;
-                                }
-                                 
-                         }
+                    foreach (Material matt in transform.Find("Tete").GetComponent<Renderer>().materials)
+                    {
+                        Debug.Log(matt.name);
+                        if (matt.name == "Face (Instance)")
+                        {
+                            matt.mainTexture = Resources.Load("Textures/FaceBlessure1-2") as Texture;
+                        }
+
+                    }
 
 
 
                 }
             }
-            else if(this.lives <= 60 && this.lives > 30)
+            else if (this.lives <= 60 && this.lives > 30)
             {
-                if(this.gameObject.name =="J1" && transform.Find("Toge") !=null)
+                if (this.gameObject.name == "J1" && transform.Find("Toge") != null)
                 {
                     transform.Find("Tete").GetComponent<Renderer>().material.mainTexture = Resources.Load("Textures/CorpsBlessure2") as Texture;
                     Destroy(transform.Find("Toge").gameObject);
@@ -172,7 +173,7 @@ public class Character : MonoBehaviour {
 
 
                 }
-                    this.transform.GetComponent<ParticleSystem>().startSize = 5;
+                this.transform.GetComponent<ParticleSystem>().startSize = 5;
                 this.level = 4;
             }
 
@@ -213,7 +214,7 @@ public class Character : MonoBehaviour {
                 }
                 if (stunned)
                 {
-                   // this.transform.GetComponent<Animation>().CrossFade("Stunned");
+                    // this.transform.GetComponent<Animation>().CrossFade("Stunned");
                     goBack();
                 }
                 if (hit)
@@ -280,18 +281,21 @@ public class Character : MonoBehaviour {
         }
 
 
-	   
-	}
+
+    }
 
     public void impact(int damages)
     {
-        switch(level)
+        switch (level)
         {
-            case 2: damages = damages + 2;
+            case 2:
+                damages = damages + 2;
                 break;
-            case 3: damages = damages + 6;
+            case 3:
+                damages = damages + 6;
                 break;
-            case 4: damages = damages * 2;
+            case 4:
+                damages = damages * 2;
                 break;
             default:
                 break;
@@ -302,9 +306,9 @@ public class Character : MonoBehaviour {
         Transform spawnImpact;
         spawnImpact = transform.Find("ImpactZone");
 
-                GameObject clone = Instantiate(Resources.Load("Prefabs/Impact"), spawnImpact.transform.position, spawnImpact.transform.rotation) as GameObject;
-                clone.GetComponent<Damages>().setDamages(damages);
-                clone.gameObject.GetComponent<Damages>().setOwner(this.gameObject.name);
+        GameObject clone = Instantiate(Resources.Load("Prefabs/Impact"), spawnImpact.transform.position, spawnImpact.transform.rotation) as GameObject;
+        clone.GetComponent<Damages>().setDamages(damages);
+        clone.gameObject.GetComponent<Damages>().setOwner(this.gameObject.name);
     }
 
     public void nextCombo()
@@ -344,23 +348,23 @@ public class Character : MonoBehaviour {
             moveDirection.z = -0.1f;
             //this.GetComponent<CharacterController>().Move(new Vector3(0, 0, -0.1f));
         }
-            
+
     }
 
     public void goFront()
     {
         run = true;
-        if(this.gameObject.name == "J1")
+        if (this.gameObject.name == "J1")
         {
             moveDirection.z = -0.1f;
-          // this.GetComponent<CharacterController>().Move(new Vector3(0, 0, -0.1f));
+            // this.GetComponent<CharacterController>().Move(new Vector3(0, 0, -0.1f));
         }
         else
         {
             moveDirection.z = 0.1f;
-           // this.GetComponent<CharacterController>().Move(new Vector3(0, 0, 0.1f));
+            // this.GetComponent<CharacterController>().Move(new Vector3(0, 0, 0.1f));
         }
-        
+
     }
 
     public void strike()
@@ -396,7 +400,7 @@ public class Character : MonoBehaviour {
 
     public void allFalse()
     {
-        
+
         run = false;
         back = false;
         hit = false;
@@ -417,7 +421,7 @@ public class Character : MonoBehaviour {
         this.transform.LookAt(GameObject.Find("J2").transform);
 
 
-        if(Input.GetKey(KeyCode.A) && !isBlocking)
+        if (Input.GetKey(KeyCode.A) && !isBlocking)
         {
             goBack();
         }
@@ -445,7 +449,7 @@ public class Character : MonoBehaviour {
         }
         if (Input.GetKeyDown(KeyCode.T) /*&&  canHit*/)
         {
-            if(combo > 4 )
+            if (combo > 4)
             {
                 combo = 1;
             }
@@ -458,15 +462,15 @@ public class Character : MonoBehaviour {
         }
         else
         {
-            if(loadingSuperHit)
+            if (loadingSuperHit)
             {
                 superHit = true;
             }
             loadingSuperHit = false;
         }
 
-        
-        
+
+
     }
 
     public void J2()
@@ -524,8 +528,8 @@ public class Character : MonoBehaviour {
             }
             loadingSuperHit = false;
         }
-            
-        
+
+
     }
 
     public void hardStun()
@@ -537,26 +541,29 @@ public class Character : MonoBehaviour {
     public void takeDamages(int damages)
     {
 
-        switch(level)
+        switch (level)
         {
-            case 2: damages = damages - 3;
+            case 2:
+                damages = damages - 3;
                 break;
-            case 3: damages = damages - 8;
+            case 3:
+                damages = damages - 8;
                 break;
-            case 4: damages = damages - 15;
+            case 4:
+                damages = damages - 15;
                 break;
             default:
                 break;
         }
 
-        if(damages < 0)
+        if (damages < 0)
         {
             damages = 0;
         }
 
 
-        
-        if(!isBlocking)
+
+        if (!isBlocking)
         {
             allFalse();
             this.lives = lives - damages;
@@ -571,16 +578,16 @@ public class Character : MonoBehaviour {
                 {
                     hardStun();
                     StartCoroutine(waitAndFight(3));
-                    
+
                 }
                 else
                 {
-                   
+
                     StartCoroutine(waitAndFight(1));
                     touched = true;
                 }
 
-                
+
             }
         }
         else
@@ -595,7 +602,7 @@ public class Character : MonoBehaviour {
             {
                 activeBlock = true;
             }
-            
+
         }
     }
 
@@ -624,10 +631,20 @@ public class Character : MonoBehaviour {
         }
     }
 
+    void OnTriggerEnter()
+    {
+        this.lives = 0;
+        die();
+    }
 
     public int getLives()
     {
         return this.lives;
+    }
+
+    public int getBlock()
+    {
+        return this.block;
     }
 
 }

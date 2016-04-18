@@ -30,7 +30,7 @@ public class MainMenu : MonoBehaviour {
 
     public void launchGame()
     {
-        Application.LoadLevel("tests Titix");
+        Application.LoadLevel("sceneCombat");
     }
 
     public void quit()

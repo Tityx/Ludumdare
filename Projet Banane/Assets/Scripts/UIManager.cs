@@ -6,6 +6,8 @@ public class UIManager : MonoBehaviour {
 
     private int livesJ1;
     private int livesJ2;
+    private int blockJ1;
+    private int blockJ2;
     private bool fighting;
     private string winner;
 
@@ -23,9 +25,11 @@ public class UIManager : MonoBehaviour {
         {
             this.livesJ1 = GameObject.Find("J1").transform.GetComponent<Character>().getLives();
             this.livesJ2 = GameObject.Find("J2").transform.GetComponent<Character>().getLives();
+            this.blockJ1 = GameObject.Find("J1").transform.GetComponent<Character>().getBlock();
+            this.blockJ2 = GameObject.Find("J2").transform.GetComponent<Character>().getBlock();
 
 
-            if(livesJ1 <= 0 || livesJ2 <=0)
+            if (livesJ1 <= 0 || livesJ2 <=0)
             {
                 if(livesJ1 < livesJ2)
                 {
@@ -42,6 +46,8 @@ public class UIManager : MonoBehaviour {
 
             transform.Find("Vies J1").GetComponent<RectTransform>().sizeDelta = new Vector2(this.livesJ1, 200);
             transform.Find("Vies J2").GetComponent<RectTransform>().sizeDelta = new Vector2(this.livesJ2, 200);
+            transform.Find("Block J1").GetComponent<RectTransform>().sizeDelta = new Vector2(this.blockJ1/10, 200);
+            transform.Find("Block J2").GetComponent<RectTransform>().sizeDelta = new Vector2(this.blockJ2/10, 200);
 
             if (this.livesJ2 <= 0 || this.livesJ1 <= 0)
             {
@@ -59,6 +65,8 @@ public class UIManager : MonoBehaviour {
         fighting = false;
         transform.Find("Vies J1").gameObject.SetActive(false);
         transform.Find("Vies J2").gameObject.SetActive(false);
+        transform.Find("Block J1").gameObject.SetActive(false);
+        transform.Find("Block J2").gameObject.SetActive(false);
         StartCoroutine(waitAndDisplay());
     }
 
@@ -69,7 +77,7 @@ public class UIManager : MonoBehaviour {
 
     public void rematch()
     {
-        Application.LoadLevel("tests Titix");
+        Application.LoadLevel("sceneCombat");
         
     }
 

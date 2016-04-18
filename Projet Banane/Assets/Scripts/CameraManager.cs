@@ -8,6 +8,7 @@ public class CameraManager : MonoBehaviour {
     Transform J2;
     float z;
     float x;
+    float y;
 
 	// Use this for initialization
 	void Start ()
@@ -20,17 +21,19 @@ public class CameraManager : MonoBehaviour {
 	void Update ()
     {
 
-        if(J1.transform.position.z > J2.transform.position.z)
+        y = J2.transform.position.y +1.5f;
+
+        if (J1.transform.position.z > J2.transform.position.z)
         {
             z = J2.transform.position.z + (J1.transform.position.z - J2.transform.position.z);
             x = -15 - (J1.transform.position.z - J2.transform.position.z);
-            this.transform.position = new Vector3(x, 4.9f, z);
+            this.transform.position = new Vector3(x, y, z);
         }
         else
         {
             z = J1.transform.position.z + (J2.transform.position.z - J1.transform.position.z);
             x = -15 - (J2.transform.position.z - J1.transform.position.z);
-            this.transform.position = new Vector3(x, 4.9f, z);
+            this.transform.position = new Vector3(x, y, z);
         }
 
         
